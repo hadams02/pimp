@@ -1,6 +1,6 @@
 # pimp
 pimp bot for discord
 
-made for practical functions and practical jokes 
+made as a side project to mess around with
 
-coded by Hunter Adams as of May 19 2021
+coded by Hunter Adams & Jordan Cannon
