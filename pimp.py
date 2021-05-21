@@ -1,5 +1,4 @@
 from discord import channel, client
-from discord.flags import Intents
 import requests
 import discord
 import random
@@ -10,8 +9,7 @@ from discord.ext import commands
 from list1 import kanyequotes
 
 intents = discord.Intents.default()
-intents.members=True
-client = discord.Client(intents=intents)
+intents.members = True
 client = commands.Bot(command_prefix = '$')
 bot = client
 
@@ -21,16 +19,19 @@ async def on_ready():
 
 ## Action messages, work in progress 
 @bot.event
-async def on_message_join(member):
+async def on_member_join(member):
+    channel = client.get_channel(820511759155855362)
+    embed=discord.Embed(title=f"Waddup G {member.name}", description=f"Welcome playa {member.guild.name}!") 
+    embed.set_thumbnail(url=member.avatar_url)
+    await channel.send(embed=embed)
+
+@bot.event
+async def on_member_remove(member):
     channel = client.get_channel(820511759155855362)
     embed=discord.Embed(title=f"Waddup G {member.name}", description=f"Welcome playa {member.guild.name}!") 
     embed.set_thumbnail(url=member.avatar_url) 
 
     await channel.send(embed=embed)
-
-@bot.event
-async def on_member_leave(ctx):
-    await ctx.send('{member} hates the game and not the playa')
 
 @bot.event
 async def on_member_kick(ctx):
@@ -50,7 +51,7 @@ async def biggie(ctx):
 ##Random Kanye quote
 @bot.command()
 async def kanye(ctx):
-    await ctx.send(random.choice(kanyequotes) + " - Kanye West")
+    await ctx.send(random.choice(kanyequotes) + " -Kanye West")
 
 ## Coinflip command
 heads = "Heads"
