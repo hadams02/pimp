@@ -5,7 +5,6 @@ import discord
 import random
 import requests
 import youtube_dl
-import asyncio
 from discord import FFmpegPCMAudio
 from bs4 import  BeautifulSoup
 from discord.ext import commands
@@ -46,8 +45,6 @@ async def passtheblunt(channel):
     channel = client.get_channel(820511759155855362)
     await channel.send("help yaself g", file=discord.File('/Users/hunter/Desktop/pimp/pass.png'))
     
-
-## discord.Sticker
 
 ##Random biggie lyric command
 my_list = ["i love it when they call me big poppa", "throw ya hands in the air if u a true playa", "super nintendo sega genesis when i was dead broke man i couldnt picture this"]
