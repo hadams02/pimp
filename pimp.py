@@ -175,4 +175,4 @@ tails = "Tails"
 async def coinflip(ctx):
     await ctx.send(random.choice([heads, tails]))
 
-bot.run('ODQzNjg5ODY0ODk2ODM5Njkx.YKHhag.GGZlzHfOfSJI523u0x7HthurNKE')
+bot.run("devkey")
